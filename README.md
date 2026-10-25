@@ -1,5 +1,7 @@
 # DAG Orchestrator Desktop
 
+[![MCP smoke test — Windows and Ubuntu](https://github.com/dgpdgp/dag-orchestrator-desktop/actions/workflows/demo-validation.yml/badge.svg)](https://github.com/dgpdgp/dag-orchestrator-desktop/actions/workflows/demo-validation.yml)
+
 ## Quick links / Быстрый старт
 
 **Coordinate dependent Claude coding tasks with a local Python MCP server.** Use a Skill and optional specialized agents, with explicit prerequisites, safe claims, retries, and recovery. **The MCP does not spawn workers or run tests itself.**
