@@ -1,5 +1,44 @@
 # DAG Orchestrator Desktop
 
+## Quick links / Быстрый старт
+
+**Coordinate dependent Claude coding tasks with a local Python MCP server.** Use a Skill and optional specialized agents, with explicit prerequisites, safe claims, retries, and recovery. **The MCP does not spawn workers or run tests itself.**
+
+**Управление зависимыми задачами Claude через локальный MCP на Python.** Skill и три роли субагентов помогают организовать разработку; MCP проверяет зависимости, состояния и блокировки. **Сам MCP не запускает исполнителей и тесты.**
+
+| Start here / Начните здесь | Link / Ссылка |
+|---|---|
+| 📦 **Download / Скачать v2.3.0** | [Windows installer + Claude plugin ZIP](https://github.com/dgpdgp/dag-orchestrator-desktop/releases/tag/v2.3.0) |
+| 🧩 **Demo / Демонстрация** | [Reproducible DAG workflow and MCP smoke test](DEMO_RU_EN.md) |
+| 📖 **Русская инструкция** | [INSTALLATION_GUIDE_RU.md](INSTALLATION_GUIDE_RU.md) |
+| 🌐 **Claude directory submission** | [English listing draft and requirements](CLAUDE_DIRECTORY_SUBMISSION_EN.md) |
+| 📣 **Community showcase** | [English outreach materials](COMMUNITY_LAUNCH_EN.md) |
+
+### How a DAG helps / Как работает граф
+
+```mermaid
+flowchart TD
+    A["A — Contract / Контракт"] --> B["B — Frontend / Интерфейс"]
+    A --> C["C — Backend / Сервер"]
+    B --> D["D — Integration / Интеграция"]
+    C --> D
+    D --> E["E — Regression tests / Тесты"]
+```
+
+**B and C are candidates for concurrent execution** only if Claude actually provides subagent tools and the declared file ownership/locks are nonconflicting. D cannot start before both complete.
+
+**B и C могут выполняться параллельно** только при доступных субагентах и отсутствии конфликтов файлов. D ждёт завершения обеих задач.
+
+**Reproduce the MCP gate locally / Проверка MCP:**
+
+```bash
+python tools/smoke_test.py
+```
+
+This smoke test checks MCP startup and dependency gating; it does not prove your Claude integration or subagent parallelism.
+
+---
+
 **Версия:** 2.3.0  
 **Разработчик:** **Давид Пагава / David Pagava**  
 **© 2026 David Pagava**
