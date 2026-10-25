@@ -1,0 +1,29 @@
+name: MCP demonstration — reproducible smoke test
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'mcp/**'
+      - 'tools/smoke_test.py'
+      - '.github/workflows/demo-validation.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mcp-smoke:
+    name: Python stdlib MCP smoke — ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify local stdio MCP dependency gate
+        run: python tools/smoke_test.py
