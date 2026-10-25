@@ -1,0 +1,38 @@
+name: Publish DAG Orchestrator Desktop v2.3.0
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-v2.3.0.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    name: Create GitHub Release and attach ZIP installers
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate the packaged archives and notes
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s 'downloads/DAG-Orchestrator-Windows-Installer-v2.3.0-David-Pagava.zip'
+          test -s 'downloads/DAG-Orchestrator-CLAUDE-PLUGIN-v2.3.0-David-Pagava.zip'
+          test -s 'RELEASE_NOTES_RU.md'
+          unzip -t 'downloads/DAG-Orchestrator-Windows-Installer-v2.3.0-David-Pagava.zip' >/dev/null
+          unzip -t 'downloads/DAG-Orchestrator-CLAUDE-PLUGIN-v2.3.0-David-Pagava.zip' >/dev/null
+      - name: Publish or update release v2.3.0
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view v2.3.0 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release upload v2.3.0 downloads/DAG-Orchestrator-Windows-Installer-v2.3.0-David-Pagava.zip downloads/DAG-Orchestrator-CLAUDE-PLUGIN-v2.3.0-David-Pagava.zip --clobber --repo "$GITHUB_REPOSITORY"
+          else
+            gh release create v2.3.0 downloads/DAG-Orchestrator-Windows-Installer-v2.3.0-David-Pagava.zip downloads/DAG-Orchestrator-CLAUDE-PLUGIN-v2.3.0-David-Pagava.zip --target "$GITHUB_SHA" --title 'DAG Orchestrator Desktop v2.3.0 — David Pagava' --notes-file RELEASE_NOTES_RU.md --repo "$GITHUB_REPOSITORY"
+          fi
