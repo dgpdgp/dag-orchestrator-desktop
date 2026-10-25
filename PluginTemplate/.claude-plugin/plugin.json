@@ -1,0 +1,8 @@
+{
+  "name": "dag-orchestrator-desktop",
+  "version": "2.3.0",
+  "description": "Dependency-aware planning and safe MCP DAG state for Claude Cowork/Code; subagents run only when the host exposes them.",
+  "author": {
+    "name": "David Pagava"
+  }
+}
