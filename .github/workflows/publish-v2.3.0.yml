@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/publish-v2.3.0.yml'
+      - 'RELEASE_NOTES_RU.md'
   workflow_dispatch:
 
 permissions:
@@ -32,7 +33,7 @@ jobs:
         run: |
           set -euo pipefail
           if gh release view v2.3.0 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            gh release upload v2.3.0 downloads/DAG-Orchestrator-Windows-Installer-v2.3.0-David-Pagava.zip downloads/DAG-Orchestrator-CLAUDE-PLUGIN-v2.3.0-David-Pagava.zip --clobber --repo "$GITHUB_REPOSITORY"
+            gh release edit v2.3.0 --notes-file RELEASE_NOTES_RU.md --repo "$GITHUB_REPOSITORY"
           else
             gh release create v2.3.0 downloads/DAG-Orchestrator-Windows-Installer-v2.3.0-David-Pagava.zip downloads/DAG-Orchestrator-CLAUDE-PLUGIN-v2.3.0-David-Pagava.zip --target "$GITHUB_SHA" --title 'DAG Orchestrator Desktop v2.3.0 — David Pagava' --notes-file RELEASE_NOTES_RU.md --repo "$GITHUB_REPOSITORY"
           fi
