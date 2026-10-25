@@ -1,0 +1,16 @@
+DAG Orchestrator Desktop v2.3.0 — GitHub
+Разработчик: Давид Пагава / David Pagava
+
+1. В GitHub Desktop выберите dag-orchestrator-desktop.
+2. Нажмите Fetch origin, затем Pull origin если появится.
+3. Нажмите Show in Explorer.
+4. Распакуйте ВСЕ файлы из этого ZIP ПРЯМО В ПАПКУ РЕПОЗИТОРИЯ, чтобы рядом с README.md появились CHECK-FIRST.bat, папки mcp, PluginTemplate, tools, downloads.
+5. Вернитесь в GitHub Desktop: появятся новые файлы.
+6. В Summary напишите: Add verified DAG Orchestrator v2.3.0 source and downloads
+7. Нажмите Commit to main, затем Push origin.
+8. Проверьте https://github.com/dgpdgp/dag-orchestrator-desktop
+
+НЕ распаковывайте скачиваемые ZIP внутри downloads: они предназначены для пользователей.
+НЕ копируйте в GitHub свои файлы конфигурации Claude, резервные копии или токены.
+
+После публикации исходного кода файлы downloads можно оставить в репозитории. Позже, при желании, прикрепить их также к GitHub Release v2.3.0.

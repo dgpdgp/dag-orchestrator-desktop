@@ -1,0 +1,26 @@
+DAG Orchestrator Desktop v2.3.0 — исправление установщика Windows, сборка 2
+
+ИСПРАВЛЕНИЕ
+В прежнем архиве CHECK-FIRST.bat мог ошибочно выводить
+"Python 3.10+ not found", хотя Python уже установлен.
+
+bootstrap.ps1 теперь ищет интерпретатор по команде python, в типовых
+папках Windows (включая C:\Python314\python.exe) и в реестре Python.
+Проверка версии выполняется отдельно от обработки ошибок PowerShell.
+
+ПРОВЕРКА
+1. Распакуйте весь архив в отдельную папку.
+2. Дважды нажмите CHECK-FIRST.bat.
+3. Если появилось CHECK OK, закройте Claude Desktop и нажмите INSTALL-DAG.bat.
+4. Затем запустите VERIFY-DAG.bat и проверьте MCP в Claude Desktop.
+
+Если проверка поиска Python всё же не пройдёт, можно выполнить из
+PowerShell, в папке распакованного проекта:
+
+  $env:DAG_PYTHON_EXE = 'C:\Python314\python.exe'
+  powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\bootstrap.ps1 -Mode Check
+
+ПРИМЕЧАНИЕ
+Исправленный код проверен автоматическими тестами, но фактическая
+проверка на вашем Windows 11 будет выполнена при следующем запуске.
+Python переустанавливать не требуется. Настройки Claude при CHECK не меняются.

@@ -1,0 +1,27 @@
+{
+  "version": "2.3.0",
+  "sha256": {
+    "CHECK-FIRST.bat": "f3c7eb15c797b0d5a3fac77d9081ad765f4b2118ddbff9c0041d3058916822f6",
+    "INSTALL-DAG.bat": "d761f11f83075c12e79b3d5ca78a601f1d68e1f73de4b01decbfbe0ed5aa6dcd",
+    "INSTALLATION_GUIDE_RU.md": "7d4b21c2ad3c5d16f6d5fb470982dcef1a482a2bc249cdf437ee9dda9185b562",
+    "PluginTemplate/.claude-plugin/plugin.json": "8cf939017e718f8ce63e6655757a2f3eddba7911571228d7e6b4590c79e87bed",
+    "PluginTemplate/.mcp.json": "06b581bf7db7ad537dfe9f98e6b69052b158812292c8e61d36b97e13d38deea6",
+    "PluginTemplate/README.md": "1718a9eacf920151cee7220a4e821ffa5d677624671ec97367d921019134d350",
+    "PluginTemplate/agents/dag-implementer.md": "302128b12960ee4957ae066ee82c56b1345e34d5135a914b7973fdf0bd6c1646",
+    "PluginTemplate/agents/dag-reviewer.md": "9974f2a3e723141dd385dcd0fcdbd5294fbab9b00b7fa526cfd74862c9844b20",
+    "PluginTemplate/agents/dag-test-engineer.md": "2e231f7362f8f4738bf5e2ac5dec9001d49ad0d15dabfc9d26f0e2471d2fccff",
+    "PluginTemplate/mcp/server.py": "98940db96b66bfaba55c93ad8e95459e11e7b0253f3e5e2d615093f5e6a0e108",
+    "PluginTemplate/skills/dag-orchestrator-desktop/SKILL.md": "daf4ba9d29b35b89c2dcf391e28edf5b0cc709206a05061bc578c8ce95f907b3",
+    "PluginTemplate/skills/dag-orchestrator-desktop/references/EXAMPLE_DAG.json": "1236a438ae57bd4a327219573ad6e25ca3a6f957b8e7dea9788531fa302bc87a",
+    "PluginTemplate/skills/dag-orchestrator-desktop/references/MCP_WORKFLOW.md": "4763e5655e6c80e5979c1b7c23a504965a540c9331a9063e4fb90417555cce96",
+    "RELEASE_CHECKS_RU.md": "ee432a6d9692d8798692872393df1417d634ebcc674b74aad5f48f3a539e2720",
+    "UNINSTALL-DAG.bat": "0f0ef3973adf647be181a2e50f816a7789589eaace5c8a887a4ee11c5bf07721",
+    "VERIFY-DAG.bat": "995fa65f429266d3b4fb0b1d62dc305c64c5016e1b527f568df33d0a3f4630a8",
+    "bootstrap.ps1": "b4de1f1e0e0465e32182caa79815a9b19f2fa483b6542ee9005cb3e56df7bd26",
+    "installer_engine.py": "25380076eee2d4acae8f639f4679c0f8f94dc6ac0e47ac8852b3868f368a6b0e",
+    "mcp/server.py": "98940db96b66bfaba55c93ad8e95459e11e7b0253f3e5e2d615093f5e6a0e108",
+    "tools/smoke_test.py": "270240cb458a77e1ef0bbb51fba6dd93eba9933fc60a5e8e6c21111c1ac17a7f",
+    "tools/test_installer_engine.py": "86ad7e63376d28be35da0e550451a230d0c2a5eb4c9b0cbdc6ac2202f6f86e7a",
+    "НАЧНИТЕ-ЗДЕСЬ.txt": "3be31a18cf090d790b5bafc6da22db6d31578fc03653783f9dd06ee16279c638"
+  }
+}

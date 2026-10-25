@@ -1,0 +1,56 @@
+{
+  "graph_id": "sample_portal_01",
+  "title": "Портал: API + интерфейс + тестирование",
+  "tasks": [
+    {
+      "id": "contracts",
+      "title": "Согласовать интерфейсы",
+      "depends_on": [],
+      "instructions": "Изучить проект и описать контракт API. Не менять бизнес-логику.",
+      "acceptance": ["Контракт согласован", "Проверена обратная совместимость"],
+      "owned_files": ["docs/api-contract.md"],
+      "locks": [],
+      "max_retries": 1
+    },
+    {
+      "id": "frontend",
+      "title": "Реализовать интерфейс",
+      "depends_on": ["contracts"],
+      "instructions": "Следовать согласованному контракту API и существующему стилю.",
+      "acceptance": ["UI-тесты выполнены", "Старые разделы работают"],
+      "owned_files": ["frontend"],
+      "locks": [],
+      "max_retries": 2
+    },
+    {
+      "id": "backend",
+      "title": "Реализовать API",
+      "depends_on": ["contracts"],
+      "instructions": "Реализовать API без изменения таблиц БД без одобрения.",
+      "acceptance": ["API-тесты выполнены", "Ошибки обработаны"],
+      "owned_files": ["backend"],
+      "locks": [],
+      "max_retries": 2
+    },
+    {
+      "id": "integration",
+      "title": "Объединение модулей",
+      "depends_on": ["frontend", "backend"],
+      "instructions": "Объединить изменения и устранить несовместимости.",
+      "acceptance": ["Интеграционные тесты прошли"],
+      "owned_files": ["integration"],
+      "locks": ["integration"],
+      "max_retries": 1
+    },
+    {
+      "id": "regression",
+      "title": "Полная проверка",
+      "depends_on": ["integration"],
+      "instructions": "Запустить доступные регрессионные тесты; задокументировать результаты.",
+      "acceptance": ["Критические сценарии работают", "Итоговый отчёт подготовлен"],
+      "owned_files": ["reports/verification.md"],
+      "locks": ["verification"],
+      "max_retries": 1
+    }
+  ]
+}
